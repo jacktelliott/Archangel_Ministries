@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import NavigationBar from './NavigationBar';
+import Footer from './Footer';
+
+import Home from './ContentPages/Home'
+import About from './ContentPages/About'
+import RegnumDeiCenter from './ContentPages/RegnumDeiCenter'
+import Contact from './ContentPages/Contact'
+import Donate from './ContentPages/Donate'
+import NotFound from './ContentPages/NotFound';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavigationBar />
+          <div className='content'>
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route exact path='/about' element={<About />} />
+              <Route exact path='/regnum-dei-center' element={<RegnumDeiCenter />} />
+              <Route exact path='/contact' element={<Contact />} />
+              <Route exact path='/donate' element={<Donate />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </div>
+          <Footer />
+      </div>
+    </Router>
   );
 }
 
