@@ -7,10 +7,13 @@ const Contact = () => {
     const [emailAddress, setEmailAddress] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
+    const [hasSubmitted, setHasSubmitted] = useState(false);
 
     //implement button
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        setHasSubmitted(true);
     }
 
     return ( 
@@ -27,7 +30,7 @@ const Contact = () => {
                     <i>Or simply fill out the form below!</i>
                 </h4>
             </div>
-            <div className="contact_form">
+            <form className="contact_form" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     required
@@ -63,7 +66,12 @@ const Contact = () => {
                     placeholder="Type your message here..."
                 /><br />
                 <button>Submit</button>
-            </div>
+                {hasSubmitted &&
+                    <p>
+                        Thanks for reaching out to us! Someone will be in touch shortly. <br />
+                        May God bless you! Soli Deo gloria!
+                    </p>}
+            </form>
         </div>
      );
 }
