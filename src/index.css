@@ -1,3 +1,9 @@
+* p {
+    font-size: 22px;
+    color: #333333;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .navigation_bar {
   padding: 20px;
   display: flex;
@@ -77,9 +83,6 @@
   color: #333333;
 }
 .home_explanation p {
-  font-size: 22px;
-  color: #333333;
-  font-family: 'Times New Roman', Times, serif;
   margin: 50px;
 }
 .home_quote {
@@ -101,9 +104,6 @@
 .about_main_content h2 {
   text-align: center;
   font-size: 42px;
-}
-.about_main_content p {
-  font-size: 22px;
 }
 .about_main_content ul {
   font-size: 22px;
@@ -130,4 +130,19 @@
 .contact_info h4 {
   font-size: 22px;
   color: #333333;
+}
+.contact_form input {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 300px;
+}
+.contact_form textarea {
+    width: 630px;
+    height: 200px;
+}
+.contact_form p {
+    align-content: center;
+    padding: 25px;
 }
